@@ -307,7 +307,7 @@ using namespace N;          // Make T visible without N::
 
 ```cpp
 #include <memory>           // Include memory (std namespace)
-shared_ptr<int> x;          // Empty shared_ptr to a integer on heap. Uses reference counting for cleaning up objects.
+shared_ptr<int> x;          // Empty shared_ptr to a integer on heap.
 x = make_shared<int>(12);   // Allocate value 12 on heap
 shared_ptr<int> y = x;      // Copy shared_ptr, implicit changes reference count to 2.
 cout << *y;                 // Dereference y to print '12'
