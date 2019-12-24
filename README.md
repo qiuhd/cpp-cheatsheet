@@ -524,8 +524,7 @@ cout << duration_cast<ms>(to - from)
 ## `thread` (Multi-threading library)
 ```cpp
 #include <thread>         // Include thread
-unsigned c = 
-  hardware_concurrency(); // Hardware threads (or 0 for unknown)
+unsigned c = hardware_concurrency(); // Hardware threads (or 0 for unknown)
 auto lambdaFn = [](){     // Lambda function used for thread body
     cout << "Hello multithreading";
 };
@@ -535,8 +534,8 @@ t.join();                 // Wait for t finishes
 // --- shared resource example ---
 mutex mut;                         // Mutex for synchronization
 condition_variable cond;           // Shared condition variable
-const char* sharedMes              // Shared resource
-  = nullptr;
+const char* sharedMes = nullptr;   // Shared resource
+  
 auto pingPongFn =                  // thread body (lambda). Print someone else's message
   [&](const char* mes){
     while (true){
