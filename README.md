@@ -542,7 +542,9 @@ auto pingPongFn =                  // thread body (lambda). Print someone else's
     while (true){
       unique_lock<mutex> lock(mut);// locks the mutex 
       do {                
-        cond.wait(lock, [&](){     // wait for condition to be true (unlocks while waiting which allows other threads to modify)        
+        cond.wait(lock, [&](){     // wait for condition to be true 
+                                   // (unlocks while waiting which allows 
+                                   // other threads to modify)        
           return sharedMes != mes; // statement for when to continue
         });
       } while (sharedMes == mes);  // prevents spurious wakeup
